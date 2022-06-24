@@ -22,7 +22,7 @@ pub fn try_print(data: impl AsRef<[u8]>) -> Result<(), PrintError> {
     Ok(QrCode::new(data)?
         .render::<Dot>()
         .build()
-        .print(Output::default(), Colors::from_env())?)
+        .print(Output::Stderr, Colors::from_env())?)
 }
 
 pub fn print_with_url(url: impl AsRef<str>) {
